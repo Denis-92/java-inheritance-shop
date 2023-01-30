@@ -1,6 +1,7 @@
 package org.lessons.java.shop;
 
 import java.util.Random;
+import java.text.DecimalFormat;
 
 public class Prodotto {
 	
@@ -32,19 +33,52 @@ public class Prodotto {
 //	Al termine dell’inserimento stampate il catalogo (fate l’override del metodo toString per restituire le informazioni
 //			da stampare per ogni classe)
 	
+	private static final DecimalFormat formatta = new DecimalFormat("0.00");
+	
 	private int codice;
 	private String nome;
 	private String marca;
 	private float prezzo;
 	private int iva;
 	
-	public Prodotto(String nome, float prezzo, int iva) {
+	protected Prodotto(String nome, String marca, float prezzo, int iva) {
 		super();
 		Random makeRandom = new Random();
 		codice = makeRandom.nextInt() & Integer.MAX_VALUE;
 		this.nome = nome;
+		this.marca = marca;
 		this.prezzo = prezzo;
 		this.iva = iva;
+	}
+	
+	public int getCodice() {
+		return codice;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public String getMarca() {
+		return marca;
+	}
+	
+	public float getPrezzo() {
+		return prezzo;
+	}
+	
+	public int getIva() {
+		return iva;
+	}
+	
+	public String getPrezzoConIva() {
+		float prezzoConIva = prezzo * (iva + 100) / 100F;
+		return formattaImporto(prezzoConIva);
+	}
+	
+	private String formattaImporto (float saldo) {
+		String importoFormattato = formatta.format(saldo);
+		return importoFormattato;
 	}
 
 }
