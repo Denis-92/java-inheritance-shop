@@ -41,7 +41,7 @@ public class Prodotto {
 	private float prezzo;
 	private int iva;
 	
-	protected Prodotto(String nome, String marca, float prezzo, int iva) {
+	public Prodotto(String nome, String marca, float prezzo, int iva) {
 		super();
 		Random makeRandom = new Random();
 		codice = makeRandom.nextInt() & Integer.MAX_VALUE;
