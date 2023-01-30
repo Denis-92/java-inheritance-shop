@@ -10,7 +10,14 @@ public class Smarphone extends Prodotto {
 		super(nome, marca, prezzo, iva);
 		this.codiceIMEI = codiceIMEI;
 		this.dimensioneMemoria = dimensioneMemoria;
-		
+	}
+	
+	public int getCodiceIMEI() {
+		return codiceIMEI;
+	}
+	
+	public int getDimensioneMemoria() {
+		return dimensioneMemoria;
 	}
 
 }
