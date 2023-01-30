@@ -40,22 +40,43 @@ public class Catalogo {
 		
 		System.out.println("Benvenuto, da questo pannello puoi inserire i prodotti nel catalogo!");
 		
-		boolean termina = false;
+		boolean newRecord;
 		int scelta;
+		
+		boolean sceltoTelefono = false;
+		boolean sceltoTv = false;
+		boolean sceltoCuffie= false;
+		
 		
 		// Aperto scanner
 		Scanner receiveInput = new Scanner(System.in);
 		
 		do {
-			System.out.println("inserisci prodotto");
-			System.out.print("Scegliere: 0 per Terminare: ");
+			System.out.println("Che tipo di prodotto vuoi inserire?");
+			System.out.print("Scegliere: 1 per Telefono - 2 per Televisore - 3 per Cuffie ");
 			scelta = receiveInput.nextInt();
-			termina = scelta == 0;
-		} while (!termina);
+			sceltoTelefono = scelta == 1;
+			sceltoTv = scelta == 2;
+			sceltoCuffie= scelta == 3;
+				
+			
+			if (!sceltoTelefono && !sceltoTv && !sceltoCuffie)
+				System.out.println("Errore! Scegliere un valore valido.");
+			else {
+				if (sceltoTelefono) System.out.println("Inserito telefono");
+				if (sceltoTv) System.out.println("Inserito tv");
+				if (sceltoCuffie) System.out.println("Inserito cuffie");
+			}
+			
+			System.out.print("Scegliere 0 per Continuare ");
+			scelta = receiveInput.nextInt();
+			newRecord = scelta == 0;
+		} while (newRecord);
 		
-		System.out.println("Programma terminato!");
 		receiveInput.close();
 		// Chiuso inputContainer
+		
+		System.out.println("Programma terminato!");
 		
 	}
 
