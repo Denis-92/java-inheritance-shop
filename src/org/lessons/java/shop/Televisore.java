@@ -19,5 +19,12 @@ public class Televisore extends Prodotto {
 	public boolean getModelloSmart() {
 		return modelloSmart;
 	}
+	
+	@Override
+	public String toString() {
+		return "Cuffie [getCodice()=" + getCodice()
+				+ ", getNome()=" + getNome() + ", getMarca()=" + getMarca() + ", getPrezzoConIva()=" + getPrezzoConIva() + 
+				", dimensioniTelevisore=" + dimensioniTelevisore + ", modelloSmart=" + modelloSmart + ", ]";
+	}
 
 }

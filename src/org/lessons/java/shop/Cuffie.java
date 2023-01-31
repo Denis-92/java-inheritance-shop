@@ -19,5 +19,12 @@ public class Cuffie extends Prodotto {
 	public boolean getWireless() {
 		return wireless;
 	}
+	
+	@Override
+	public String toString() {
+		return "Cuffie [getCodice()=" + getCodice()
+				+ ", getNome()=" + getNome() + ", getMarca()=" + getMarca() + ", getPrezzoConIva()=" + getPrezzoConIva() + 
+				", colore=" + colore + ", wireless=" + wireless + ", ]";
+	}
 
 }

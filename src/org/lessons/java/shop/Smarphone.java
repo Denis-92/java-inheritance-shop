@@ -19,5 +19,12 @@ public class Smarphone extends Prodotto {
 	public int getDimensioneMemoria() {
 		return dimensioneMemoria;
 	}
+	
+	@Override
+	public String toString() {
+		return "Smartphone [getCodice()=" + getCodice()
+				+ ", getNome()=" + getNome() + ", getMarca()=" + getMarca() + ", getPrezzoConIva()=" + getPrezzoConIva() + 
+				", codiceIMEI=" + codiceIMEI + ", dimensioneMemoria=" + dimensioneMemoria + ", ]";
+	}
 
 }
